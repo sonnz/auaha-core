@@ -1,4 +1,3 @@
-<script>
 (function(){
 
   const Auaha = {
@@ -184,4 +183,3 @@
   window.Auaha = Auaha;
 
 })();
-</script>
