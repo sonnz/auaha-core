@@ -1,7 +1,48 @@
-# Releasing Updates (Auaha Core)
+# Releasing Updates - Auaha Core
 
-This is the step-by-step update procedure for Auaha Core.  
+This is the step-by-step update procedure for Auaha Core - auaha-core.js, the core engine js file.   
 Goal: ship updates safely with minimal regression risk for non-technical Squarespace users.
+Note:  there is a separate procedure for releasing and managing the HTML mount pattern - the public API to this source code - see docs/MODULES.md.
+
+---
+## Release Checklist (GITHUB Browser Workflow)
+
+### Step 1 — Update the code
+1. Edit: `dist/auaha-core.js`
+2. Confirm the file is **pure JS** (no `<script>` tags).
+3. Update the version string near the top:
+   - Find: `version: "x.y.z"`
+   - Change to the new version.
+Optional (recommended): update header banner at the top with version:
+  /*!
+  Auaha Core
+  Version: 0.2.1
+  https://github.com/sonnz/auaha-core
+  Lightweight enhancement engine for Squarespace 7.1
+  (c) 2026 Auaha
+  */
+
+### Step 2 — Update CHANGELOG.md
+1. Add version, date, and change description notes
+
+### Step 3 — Create a GitHub Release
+1. Go to: Releases
+2.  Click: Draft a new release
+3.  Tag version: x.y.z
+4.  Release title: Auaha Core vx.y.z
+5.  Paste brief notes (can match CHANGELOG)
+6.  Publish release
+
+---
+
+## Versioning Rules
+
+- Use semantic versioning: `vMAJOR.MINOR.PATCH` (e.g. `v0.2.1`)
+- Keep the version tag and the internal `Auaha.version` string aligned:
+  - Git tag: `v0.2.1`
+  - Code: `version: "0.2.1",`
+
+Recommended: bump PATCH for bug fixes, MINOR for new backward-compatible features, MAJOR for breaking changes.
 
 ---
 
@@ -34,32 +75,3 @@ This also prevents accidental regressions if `main` changes later.
 Network 200 OK is not enough. The script can load but fail to execute.
 
 ---
-
-## Versioning Rules
-
-- Use semantic versioning: `vMAJOR.MINOR.PATCH` (e.g. `v0.2.1`)
-- Keep the version tag and the internal `Auaha.version` string aligned:
-  - Git tag: `v0.2.1`
-  - Code: `version: "0.2.1",`
-
-Recommended: bump PATCH for bug fixes, MINOR for new backward-compatible features, MAJOR for breaking changes.
-
----
-
-## Release Checklist (Browser Workflow)
-
-### Step 1 — Update the code
-1. Edit: `dist/auaha-core.js`
-2. Confirm the file is **pure JS** (no `<script>` tags).
-3. Update the version string near the top:
-   - Find: `version: "x.y.z"`
-   - Change to the new version.
-
-Optional (recommended): add/update a small header banner at the top:
-/*!
-  Auaha Core
-  Version: 0.2.1
-  https://github.com/sonnz/auaha-core
-  Lightweight enhancement engine for Squarespace 7.1
-  (c) 2026 Auaha
-*/
