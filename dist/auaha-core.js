@@ -1,7 +1,16 @@
+/*!
+ * Auaha Core
+ * Version: 0.2.1
+ * https://github.com/sonnz/auaha-core
+ * 
+ * Lightweight enhancement engine for Squarespace 7.1
+ * (c) 2026 Auaha
+ */
+
 (function(){
 
   const Auaha = {
-    version: "0.2.0",
+    version: "0.2.1",
     modules: {},
     debug: false,
 
