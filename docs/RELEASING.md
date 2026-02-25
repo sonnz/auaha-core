@@ -35,6 +35,19 @@ Optional (recommended): update header banner at the top with version:
 
 ---
 
+## Deployment Verification Test
+- Always verify window.Auaha exists after release.  In site, F12, search window.Auaha in the console
+- Always check file ends with window.Auaha = Auaha; + })();
+- Always open the jsDelivr URL in a tab to sanity-check the first/last lines
+
+## Smoke Test
+On a page using Filters:
+- Hard refresh (Cmd/Ctrl+Shift+R) → buttons appear
+- Click 3–4 categories fast → no duplicates, reshuffle works
+- Mobile viewport → no layout break
+
+---
+
 ## Versioning Rules
 
 - Use semantic versioning: `vMAJOR.MINOR.PATCH` (e.g. `v0.2.1`)
