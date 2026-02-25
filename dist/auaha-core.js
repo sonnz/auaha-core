@@ -1,6 +1,6 @@
 /*!
  * Auaha Core
- * Version: 0.2.1
+ * Version: 1.0.0
  * https://github.com/sonnz/auaha-core
  * 
  * Lightweight enhancement engine for Squarespace 7.1
@@ -10,7 +10,7 @@
 (function(){
 
   const Auaha = {
-    version: "0.2.1",
+    version: "1.0.0",
     modules: {},
     debug: false,
 
@@ -35,10 +35,14 @@
           return;
         }
 
+        // Prevent double-initializing the same mount (Squarespace can re-render, and we init on DOM + load) v1.0.0
+        if (el.getAttribute("data-auaha-initialized") === "true") return;
+        el.setAttribute("data-auaha-initialized", "true");
+
         try {
           module(el, this.utils);
         } catch(err){
-          console.error("Auaha: Module error in", moduleName, err);
+        console.error("Auaha: Module error in", moduleName, err);
         }
       });
 
@@ -185,9 +189,13 @@
 
   });
 
-  document.addEventListener("DOMContentLoaded", function(){
-    Auaha.init();
-  });
+  // Added safeInit guard to prevent duplicates v1.0.0
+  function safeInit(){
+  try { Auaha.init(); } catch(e) {}
+  }
+
+  document.addEventListener("DOMContentLoaded", safeInit);
+  window.addEventListener("load", safeInit);
 
   window.Auaha = Auaha;
 
