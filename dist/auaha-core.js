@@ -1,6 +1,6 @@
 /*!
  * Auaha Core
- * Version: 1.0.3
+ * Version: 1.0.4
  * https://github.com/sonnz/auaha-core
  * 
  * Lightweight enhancement engine for Squarespace 7.1
@@ -10,7 +10,7 @@
 (function(){
 
 const Auaha = {
-    version: "1.0.3",   /* Refined safeinit guard due to previous break */
+    version: "1.0.4",   /* Add stable class for styling hooks */
     modules: {},
 debug: false,
 
@@ -115,6 +115,9 @@ categoryMap.set(key, label);
 const sorted = Array.from(categoryMap.values()).sort();
 const labels = ["All", ...sorted];
 
+// Add stable class for styling hooks v1.0.4    
+el.classList.add("auaha-filters");
+    
 // Build buttons
 el.innerHTML = "";
 
