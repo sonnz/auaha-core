@@ -58,6 +58,13 @@ return el.getAttribute("data-auaha-" + key) ?? fallback;
 }
 };
 
+/*  Adding the init guard */
+const already = el.getAttribute("data-auaha-initialized") === "true";
+if (already) {
+  return; // returns from forEach callback only
+}
+el.setAttribute("data-auaha-initialized", "true");    
+    
 // -----------------------------
 // FILTERS MODULE v1.1
 // -----------------------------
@@ -185,6 +192,18 @@ apply("all");
 
 });
 
+/*  Replacing the DOMContentLoaded block*/
+function safeInit(){
+  try { Auaha.init(); } catch(e) {}
+}
+document.addEventListener("DOMContentLoaded", safeInit);
+window.addEventListener("load", safeInit);
+
+window.Auaha = Auaha;
+
+})();
+    
+/*  Replacing this block with above
 document.addEventListener("DOMContentLoaded", function(){
 Auaha.init();
 });
@@ -192,3 +211,4 @@ Auaha.init();
 window.Auaha = Auaha;
 
 })();
+End of replacing block*/
