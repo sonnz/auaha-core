@@ -202,13 +202,3 @@ window.addEventListener("load", safeInit);
 window.Auaha = Auaha;
 
 })();
-    
-/*  Replacing this block with above
-document.addEventListener("DOMContentLoaded", function(){
-Auaha.init();
-});
-
-window.Auaha = Auaha;
-
-})();
-End of replacing block*/
