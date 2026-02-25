@@ -35,11 +35,16 @@ console.warn("Auaha: Module not found:", moduleName);
 return;
 }
 
+// Prevent double-initializing the same mount (Squarespace can re-render, and we init on DOM + load)
+if (el.getAttribute("data-auaha-initialized") === "true") return;
+el.setAttribute("data-auaha-initialized", "true");
+    
 try {
 module(el, this.utils);
 } catch(err){
 console.error("Auaha: Module error in", moduleName, err);
 }
+    
 });
 
 if(this.debug){
@@ -58,13 +63,6 @@ return el.getAttribute("data-auaha-" + key) ?? fallback;
 }
 };
 
-/*  Adding the init guard */
-const already = el.getAttribute("data-auaha-initialized") === "true";
-if (already) {
-  return; // returns from forEach callback only
-}
-el.setAttribute("data-auaha-initialized", "true");    
-    
 // -----------------------------
 // FILTERS MODULE v1.1
 // -----------------------------
