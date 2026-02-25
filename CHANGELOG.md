@@ -1,5 +1,8 @@
 # Changelog
 
+## v1.0.4
+- Add stable class for styling hooks
+
 ## v1.0.3
 - Restored v0.2.0 baseline then added change
 - Hardened initialization: runs on DOMContentLoaded + window load using safeInit
