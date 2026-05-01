@@ -1,0 +1,241 @@
+/* ============================================================
+   Auaha Web Design — Foundations
+   Colors + Type tokens
+   Editorial · Minimal · Whenua-grounded · Aotearoa
+   Palette drawn from a pākē (kahu) — natural plant dyes on
+   harakeke fibre. Type families are all available in the
+   Squarespace font library.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Marcellus&family=Lato:wght@300;400;500;700&display=swap');
+
+:root {
+  /* ---------- Brand color ----------
+     The original wordmark sits in deep ngahere green; the wairua
+     of the brand (carried in the pākē made by whanaunga) is in
+     warm whenua reds, rusts, and natural-fibre beiges. The system
+     uses paper + whenua red as the primary anchors, with ngahere
+     green held back for the wordmark and key marks only. */
+
+  /* Whenua reds — primary brand expression */
+  --auaha-whero:        #5e2521;   /* oxblood, deepest pākē red */
+  --auaha-whero-soft:   #7a3a32;   /* softer whero */
+  --auaha-karaka:       #9c4a2e;   /* rust / karaka — warm accent */
+  --auaha-karaka-soft:  #b86a4a;   /* lighter rust */
+  --auaha-kiri:         #b87a6e;   /* dusty rose, fringe tone */
+  --auaha-kiri-soft:    #cc9d92;   /* lightest rose */
+
+  /* Harakeke / raw fibre — neutral warm */
+  --auaha-harakeke:     #c9a98c;   /* raw flax beige */
+  --auaha-muka:         #d8c3a8;   /* lighter muka tone */
+
+  /* Ngahere green — wordmark + quiet accent */
+  --auaha-ngahere:      #1c2e16;   /* original logo green, retained for type */
+  --auaha-ngahere-soft: #2e4226;
+  --auaha-ngahere-mute: #4a5a42;
+
+  /* Timber / stone — weathered backdrops in the photos */
+  --auaha-rakau:        #9a958a;   /* weathered timber grey */
+  --auaha-kohatu:       #6e6a62;   /* darker stone */
+
+  /* Paper / canvas — the light, spacious base */
+  --auaha-cream:        #faf6ed;   /* lightest cream */
+  --auaha-paper:        #f5f1e8;   /* primary paper */
+  --auaha-paper-warm:   #efe8d6;   /* warmer paper sections */
+  --auaha-bone:         #ebe4d2;   /* deeper paper, cards */
+  --auaha-white:        #ffffff;
+
+  /* Legacy aliases — keep older preview cards rendering correctly
+     after the palette was redrawn around the pākē. */
+  --auaha-ink:          var(--auaha-ngahere);
+  --auaha-ink-soft:     var(--auaha-ngahere-soft);
+  --auaha-ink-mute:     var(--auaha-ngahere-mute);
+  --auaha-moss:         var(--auaha-ngahere-mute);
+  --auaha-fern:         var(--auaha-rakau);
+  --auaha-clay:         var(--auaha-karaka);
+  --auaha-ochre:        var(--auaha-karaka-soft);
+  --auaha-stone:        var(--auaha-rakau);
+  --auaha-rivermist:    var(--auaha-muka);
+
+  /* ---------- Semantic ---------- */
+  --fg-1: var(--auaha-ngahere);            /* primary headline / logo ink */
+  --fg-2: var(--auaha-ngahere-soft);       /* body */
+  --fg-3: var(--auaha-ngahere-mute);       /* secondary, captions */
+  --fg-4: #6e7a64;                          /* tertiary, meta */
+  --fg-accent: var(--auaha-whero);         /* brand accent for marks, links */
+  --fg-inverse: var(--auaha-cream);
+
+  --bg-1: var(--auaha-paper);
+  --bg-2: var(--auaha-paper-warm);
+  --bg-3: var(--auaha-bone);
+  --bg-deep: var(--auaha-whero);           /* deep section background */
+  --bg-inverse: var(--auaha-ngahere);
+
+  --border-1: rgba(28, 46, 22, 0.12);
+  --border-2: rgba(28, 46, 22, 0.22);
+  --border-accent: rgba(94, 37, 33, 0.4);
+  --border-strong: var(--auaha-ngahere);
+
+  --status-ok:    var(--auaha-ngahere-mute);
+  --status-warn:  var(--auaha-karaka);
+  --status-error: var(--auaha-whero);
+
+  /* ---------- Type families ----------
+     All available in the Squarespace font library. */
+  --font-display: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-display-italic: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-label: 'Marcellus', 'Cormorant Garamond', Georgia, serif;
+  --font-body: 'Cormorant Garamond', 'EB Garamond', Georgia, serif;
+  --font-ui:   'Lato', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+
+  /* ---------- Type scale ---------- */
+  --fs-display-1: clamp(56px, 8vw, 112px);
+  --fs-display-2: clamp(44px, 6vw, 80px);
+  --fs-h1: clamp(36px, 4.4vw, 56px);
+  --fs-h2: clamp(28px, 3.2vw, 40px);
+  --fs-h3: clamp(22px, 2.4vw, 28px);
+  --fs-h4: 20px;
+  --fs-lead: 22px;
+  --fs-body: 18px;
+  --fs-body-sm: 16px;
+  --fs-caption: 14px;
+  --fs-eyebrow: 12px;
+
+  /* ---------- Spacing ---------- */
+  --sp-1: 4px;  --sp-2: 8px;  --sp-3: 12px; --sp-4: 16px;
+  --sp-5: 24px; --sp-6: 32px; --sp-7: 48px; --sp-8: 64px;
+  --sp-9: 96px; --sp-10: 128px; --sp-11: 192px;
+
+  /* ---------- Radii ---------- */
+  --radius-0: 0; --radius-sm: 2px; --radius-md: 4px;
+  --radius-lg: 8px; --radius-pill: 999px;
+
+  /* ---------- Shadows (warm, low) ---------- */
+  --shadow-1: 0 1px 2px rgba(94, 37, 33, 0.05);
+  --shadow-2: 0 4px 18px rgba(94, 37, 33, 0.08);
+  --shadow-3: 0 12px 40px rgba(94, 37, 33, 0.10);
+  --shadow-inset: inset 0 0 0 1px rgba(28, 46, 22, 0.08);
+
+  /* ---------- Motion ---------- */
+  --ease-quiet: cubic-bezier(0.32, 0.08, 0.24, 1);
+  --ease-emerge: cubic-bezier(0.16, 0.84, 0.44, 1);
+  --dur-fast: 200ms;
+  --dur-base: 360ms;
+  --dur-slow: 720ms;
+
+  /* ---------- Layout ---------- */
+  --container-narrow: 720px;
+  --container-prose:  860px;
+  --container-wide:   1200px;
+  --gutter: clamp(24px, 4vw, 64px);
+}
+
+/* ============================================================
+   Semantic element styles
+   ============================================================ */
+
+.auaha-display-1, .auaha h1.display {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: var(--fs-display-1); line-height: 1.04;
+  letter-spacing: -0.01em; color: var(--fg-1);
+}
+
+.auaha-wordmark {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: var(--fs-display-2); letter-spacing: 0.08em;
+  text-transform: uppercase; color: var(--fg-1);
+}
+
+.auaha-h1, .auaha h1 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: var(--fs-h1); line-height: 1.1;
+  letter-spacing: -0.005em; color: var(--fg-1);
+}
+.auaha-h2, .auaha h2 {
+  font-family: var(--font-display); font-weight: 400;
+  font-size: var(--fs-h2); line-height: 1.16; color: var(--fg-1);
+}
+.auaha-h3, .auaha h3 {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: var(--fs-h3); line-height: 1.25; color: var(--fg-1);
+}
+.auaha-h4 {
+  font-family: var(--font-display); font-weight: 500;
+  font-size: var(--fs-h4); line-height: 1.3; color: var(--fg-1);
+}
+
+.auaha-eyebrow, .auaha-section-label {
+  font-family: var(--font-label); font-weight: 400;
+  font-size: var(--fs-eyebrow); letter-spacing: 0.22em;
+  text-transform: uppercase; color: var(--fg-3);
+}
+
+.auaha-lead {
+  font-family: var(--font-body); font-weight: 400;
+  font-size: var(--fs-lead); line-height: 1.55;
+  color: var(--fg-2); text-wrap: pretty;
+}
+.auaha-body, .auaha p {
+  font-family: var(--font-body); font-weight: 400;
+  font-size: var(--fs-body); line-height: 1.65;
+  color: var(--fg-2); text-wrap: pretty;
+}
+.auaha-caption {
+  font-family: var(--font-ui); font-weight: 400;
+  font-size: var(--fs-caption); line-height: 1.5;
+  color: var(--fg-3); letter-spacing: 0.01em;
+}
+
+/* Te reo statement + translation pattern.
+   Use whenever te reo is invoked — never inline-mixed. */
+.auaha-tereo {
+  font-family: var(--font-display); font-style: italic;
+  font-weight: 400; font-size: var(--fs-h3);
+  line-height: 1.4; color: var(--fg-1);
+  text-wrap: balance;
+}
+.auaha-tereo + .auaha-tereo-translation {
+  margin-top: 14px;
+}
+.auaha-tereo-translation {
+  font-family: var(--font-ui); font-weight: 400;
+  font-size: 15px; letter-spacing: 0.04em;
+  color: var(--fg-3); line-height: 1.5;
+  max-width: 60ch;
+}
+
+.auaha-quote {
+  font-family: var(--font-display); font-style: italic;
+  font-weight: 400; font-size: var(--fs-h2);
+  line-height: 1.32; color: var(--fg-1);
+}
+.auaha-ui {
+  font-family: var(--font-ui); font-size: 15px;
+  letter-spacing: 0.005em; color: var(--fg-2);
+}
+
+.auaha {
+  background: var(--bg-1); color: var(--fg-2);
+  font-family: var(--font-body); font-size: var(--fs-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+}
+.auaha a {
+  color: var(--fg-1); text-decoration: underline;
+  text-decoration-color: var(--border-accent);
+  text-decoration-thickness: 1px; text-underline-offset: 4px;
+  transition: text-decoration-color var(--dur-fast) var(--ease-quiet),
+              color var(--dur-fast) var(--ease-quiet);
+}
+.auaha a:hover {
+  text-decoration-color: var(--fg-accent);
+  color: var(--fg-accent);
+}
+
+.auaha-rule {
+  border: 0; height: 1px; background: var(--border-1); margin: var(--sp-7) 0;
+}
+.auaha-rule--center {
+  width: 64px; margin-left: auto; margin-right: auto; background: var(--fg-3);
+}
